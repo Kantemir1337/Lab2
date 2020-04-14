@@ -1,0 +1,54 @@
+﻿<Window x:Class="Parser.Shortlist"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Shortlist" Height="350" Width="525" Closing="Shortlist_Closing">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush>
+                <GradientStop Color="#D2691E" Offset="0"></GradientStop>
+                <GradientStop Color="#C71585" Offset="0.3"></GradientStop>
+                <GradientStop Color="#8A2BE2" Offset="0.5"></GradientStop>
+                <GradientStop Color="#C71585" Offset="0.7"></GradientStop>
+                <GradientStop Color="#D2691E" Offset="1"></GradientStop>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Grid.Row="0">
+            <Label Grid.Row="0" Margin="2" Width="66">
+                <Label.Content>
+                    <Binding Path="CurrentPage">
+                        <Binding.StringFormat>Current Page: {0}</Binding.StringFormat>
+                    </Binding>
+                </Label.Content>
+            </Label>
+            <Button Content="Next" Height="20" Name="NextPage" Click="OnNextClicked" Margin="2"/>
+            <Button Content="Previous" Height="20" Name="PrevPage" Click="OnPreviousClicked" Margin="2"/>
+            <Button Content="Save file" Height="20" Name="Save" Click="FileSave" Width="50" Margin="170,2,2,2"/>
+            <Button Content="To main page" Click="Back" Name="BackButt" Height="20" Margin="30,2,2,2" Width="80"/>
+        </StackPanel>
+        <DataGrid ItemsSource="{Binding}" Grid.Row="1">
+            <DataGrid.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="#D2691E" Offset="0"></GradientStop>
+                    <GradientStop Color="#C71585" Offset="0.3"></GradientStop>
+                    <GradientStop Color="#8A2BE2" Offset="0.5"></GradientStop>
+                    <GradientStop Color="#C71585" Offset="0.7"></GradientStop>
+                    <GradientStop Color="#D2691E" Offset="1"></GradientStop>
+                </LinearGradientBrush>
+            </DataGrid.Background>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Width="30" Binding="{Binding ID}"/>
+                <DataGridTextColumn Header="Имя угрозы" Width="*" Binding="{Binding Name}">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="TextWrapping" Value="Wrap"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

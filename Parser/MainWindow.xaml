@@ -1,0 +1,50 @@
+﻿<Window x:Class="Parser.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Parser"
+        mc:Ignorable="d"
+        Title="NedoParser" Height="429" Width="770">
+    <Grid >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="22*"/>
+            <ColumnDefinition Width="169*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.Background>
+            <LinearGradientBrush>
+                <GradientStop Color="#D2691E" Offset="0"></GradientStop>
+                <GradientStop Color="#C71585" Offset="0.3"></GradientStop>
+                <GradientStop Color="#8A2BE2" Offset="0.5"></GradientStop>
+                <GradientStop Color="#C71585" Offset="0.7"></GradientStop>
+                <GradientStop Color="#D2691E" Offset="1"></GradientStop>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Button x:Name="ShowShortList" Click="ShowShortList_Click" ToolTip="Нажмите, чтобы увидеть сокращенный список угроз" Margin="302.3,32,252.2,312.2" Grid.Column="1">
+            <TextBlock TextAlignment="Center"> Cокращенный <LineBreak/> список</TextBlock>
+            <Button.Background>
+                <LinearGradientBrush StartPoint="0.5,1" EndPoint="0.5,0">
+                    <GradientStop Color="#FF1493" Offset="0" />
+                    <GradientStop Color="#FF6347" Offset="1" />
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button HorizontalAlignment="Left" Margin="235.3,175,0,0" Name="ShowFullList" Click="ShowFullList_Click" VerticalAlignment="Top" Width="121" Height="55" Grid.Column="1">
+            <TextBlock TextAlignment="Center"> Полный <LineBreak/> список</TextBlock>
+            <Button.Background>
+                <LinearGradientBrush StartPoint="0.5,1" EndPoint="0.5,0">
+                    <GradientStop Color="#FF1493" Offset="0" />
+                    <GradientStop Color="#FF6347" Offset="1" />
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button Content="Обновить базу" Click="Upd_Click" HorizontalAlignment="Left" Margin="153.3,320,0,0" VerticalAlignment="Top" Width="121" Height="55" Grid.Column="1">
+            <Button.Background>
+                <LinearGradientBrush StartPoint="0.5,1" EndPoint="0.5,0">
+                    <GradientStop Color="#FF1493" Offset="0" />
+                    <GradientStop Color="#FF6347" Offset="1" />
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+    </Grid>
+</Window>
